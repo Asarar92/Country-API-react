@@ -21,14 +21,13 @@ main.dark, header.dark {
   --elements-color: hsl(209, 23%, 22%);
 }
 
-
 main {
   padding: 24px;
   min-height: calc(100vh - 73px);
 }
 
-a { 
-  text-decoration-line : none;
+a {
+  text-decoration-line: none;
   color: inherit;
 }
 
@@ -41,15 +40,12 @@ a {
   z-index: 1;
 }
 
-.header-content{
+.header-content {
   display: flex;
-  align-items : center ;
+  align-items: center;
   justify-content: space-between;
-  max-width: 1280px;
+  max-width: 1200px;
   margin-inline: auto;
-  padding-inline: 24px;
-  /* background-color: yellow; */
- 
 }
 
 .title {
@@ -60,52 +56,54 @@ a {
   cursor: pointer;
 }
 
-.countries-container{
-  max-width: 1200px ; 
-  margin-inline: auto;
+.countries-container {
+  max-width: 1200px;
   margin-top: 16px;
-  display: flex;
-  gap: 64px;
-  flex-wrap: wrap;
-  justify-content: space-between; 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 32px;
+  margin-inline: auto;
 }
 
-.country-card{
+.country-card {
   display: inline-block;
-  width: 250px;
   border-radius: 8px;
-  box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  padding-bottom:24px ;
+  padding-bottom: 24px;
+  box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in-out;
   background-color: var(--elements-color);
-
 }
 
-.country-card:hover{
+.flag-container {
+  height: 160px;
+  overflow: hidden;
+}
+
+.country-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.country-card:hover {
   transform: scale(1.03);
   box-shadow: 0 0 16px 0px rgba(0, 0, 0, 0.2);
-  /* transition: transform 0.2s ease-in-out; */
-
 }
 
-
-.card-title{
+.card-title {
   font-size: 24px;
   margin-block: 16px;
 }
-.card-text{
+
+.card-text {
   padding-inline: 16px;
 }
 
 .card-text p {
   margin-block: 8px;
 }
-.country-card img {
-  width: 100%;
-
-}
-
 
 .search-filter-container {
   max-width: 1200px;
@@ -153,9 +151,9 @@ a {
   color: var(--text-color);
 }
 
-@media(max-width: 768px){
-  .countries-container{
-  justify-content: center;
+@media(max-width: 768px) {
+  .countries-container {
+      justify-content: center;
   }
 
   .title {
@@ -163,12 +161,11 @@ a {
   }
 
   .header-content p {
-      font-size: 12px ; 
+      font-size: 12px;
   }
-  
+
   .search-filter-container {
       flex-direction: column;
   }
-
   
 }

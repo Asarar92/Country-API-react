@@ -14,9 +14,9 @@ export default function Home() {
     <main className={`${isDark? 'dark': ''}`}>
       <div className="search-filter-container">
         <Search setQuery={setQuery} />
-        <FilterOptions />
+        <FilterOptions setQuery={setQuery}/>
       </div>
-      {query === 'unmount' ? '' : <CountryList query={query} />}
+      <CountryList query={query}/>
     </main>
   )
 }
